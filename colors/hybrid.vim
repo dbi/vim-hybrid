@@ -70,6 +70,8 @@ if has("gui_running")
   let s:comment    = "#505860"
   let s:red        = "#cc6666"
   let s:orange     = "#de935f"
+  let s:html       = "#69737E"
+  let s:darkhtml   = "#505860"
   let s:yellow     = "#f0c674"
   let s:green      = "#b5bd68"
   let s:aqua       = "#8abeb7"
@@ -97,6 +99,8 @@ else
     let s:comment    = "7"    " LightGrey
     let s:red        = "9"    " LightRed
     let s:orange     = "3"    " DarkYellow
+    let s:html       = "3"    " DarkYellow
+    let s:darkhtml   = "3"    " DarkYellow
     let s:yellow     = "11"   " LightYellow
     let s:green      = "10"   " LightGreen
     let s:aqua       = "14"   " LightCyan
@@ -109,6 +113,8 @@ else
     let s:comment    = "243"
     let s:red        = "167"
     let s:orange     = "173"
+    let s:html       = "173"
+    let s:darkhtml   = "173"
     let s:yellow     = "221"
     let s:green      = "143"
     let s:aqua       = "109"
@@ -141,6 +147,8 @@ exe "let s:bg_line       = ' ".s:vmode."bg=".s:line      ."'"
 exe "let s:bg_comment    = ' ".s:vmode."bg=".s:comment   ."'"
 exe "let s:bg_red        = ' ".s:vmode."bg=".s:red       ."'"
 exe "let s:bg_orange     = ' ".s:vmode."bg=".s:orange    ."'"
+exe "let s:bg_html       = ' ".s:vmode."bg=".s:html      ."'"
+exe "let s:bg_darkhtml   = ' ".s:vmode."bg=".s:darkhtml  ."'"
 exe "let s:bg_yellow     = ' ".s:vmode."bg=".s:yellow    ."'"
 exe "let s:bg_green      = ' ".s:vmode."bg=".s:green     ."'"
 exe "let s:bg_aqua       = ' ".s:vmode."bg=".s:aqua      ."'"
@@ -161,6 +169,8 @@ exe "let s:fg_line       = ' ".s:vmode."fg=".s:line      ."'"
 exe "let s:fg_comment    = ' ".s:vmode."fg=".s:comment   ."'"
 exe "let s:fg_red        = ' ".s:vmode."fg=".s:red       ."'"
 exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
+exe "let s:fg_html       = ' ".s:vmode."fg=".s:html      ."'"
+exe "let s:fg_darkhtml   = ' ".s:vmode."fg=".s:darkhtml  ."'"
 exe "let s:fg_yellow     = ' ".s:vmode."fg=".s:yellow    ."'"
 exe "let s:fg_green      = ' ".s:vmode."fg=".s:green     ."'"
 exe "let s:fg_aqua       = ' ".s:vmode."fg=".s:aqua      ."'"
@@ -194,6 +204,8 @@ if has("gui_running")
   exe "let s:sp_comment    = ' guisp=".s:comment   ."'"
   exe "let s:sp_red        = ' guisp=".s:red       ."'"
   exe "let s:sp_orange     = ' guisp=".s:orange    ."'"
+  exe "let s:sp_html       = ' guisp=".s:html      ."'"
+  exe "let s:sp_darkhtml   = ' guisp=".s:darkhtml  ."'"
   exe "let s:sp_yellow     = ' guisp=".s:yellow    ."'"
   exe "let s:sp_green      = ' guisp=".s:green     ."'"
   exe "let s:sp_aqua       = ' guisp=".s:aqua      ."'"
@@ -213,6 +225,8 @@ else
   let s:sp_comment    = ""
   let s:sp_red        = ""
   let s:sp_orange     = ""
+  let s:sp_html       = ""
+  let s:sp_darkhtml   = ""
   let s:sp_yellow     = ""
   let s:sp_green      = ""
   let s:sp_aqua       = ""
@@ -334,6 +348,14 @@ exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 "   qfFileName"
 "   qfLineNr"
 "   qfError"
+
+exe "hi! htmlTag"            .s:fg_darkhtml      .s:bg_none        .s:fmt_none
+exe "hi! htmlSpecialTagName" .s:fg_html          .s:bg_none        .s:fmt_none
+exe "hi! htmlTagN"           .s:fg_html          .s:bg_none        .s:fmt_none
+exe "hi! htmlTagName"        .s:fg_html          .s:bg_none        .s:fmt_none
+exe "hi! htmlEndTag"         .s:fg_darkhtml      .s:bg_none        .s:fmt_none
+exe "hi! htmlArg"            .s:fg_html          .s:bg_none        .s:fmt_none
+exe "hi! javaScript"         .s:fg_html          .s:bg_none        .s:fmt_none
 
 "}}}
 " Diff Syntax Highlighting:"{{{
